@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoliki - Бронирование ресторанов</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Применяем тему сразу при загрузке -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            document.documentElement.classList.add('light-theme');
+        }
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="#index" class="logo">
+                <i class="fas fa-utensils"></i> Stoliki
+            </a>
+            <div class="nav-links">
+                <!-- Навигация будет динамически обновляться через JavaScript -->
+                <a href="#index">Рестораны</a>
+                <a href="#login">Войти</a>
+                <a href="#register" class="btn-outline">Регистрация</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="app">
+        <!-- Контент будет динамически загружаться через JavaScript -->
+        <div style="text-align: center; padding: 60px 20px;">
+            <div style="display: inline-block; width: 50px; height: 50px; border: 5px solid var(--primary); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            <p style="margin-top: 20px; color: var(--text-muted);">Загрузка...</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Stoliki</h3>
+                <p>Удобный сервис бронирования столиков в лучших заведениях вашего города.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Партнерам</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Помощь</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Условия</a></li>
+                    <li><a href="#">Конфиденциальность</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stoliki. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- LOADING ANIMATION -->
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- JavaScript MODULES -->
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

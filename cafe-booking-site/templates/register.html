@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <i class="fas fa-user-plus auth-icon"></i>
+            <h2>Регистрация</h2>
+            <p>Создайте аккаунт и бронируйте лучшие места.</p>
+        </div>
+
+        <form method="POST" action="{{ url_for('register') }}" class="auth-form">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" placeholder="Ваше имя" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email адрес" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Придумайте пароль" required>
+            </div>
+
+            <button type="submit" class="btn-glow btn-full">Создать аккаунт</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
